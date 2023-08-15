@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR CODE GENERATER</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div id="container">
+        <p>Enter any link or text</p><br>
+        <input id="input">
+        <div id="img-container">
+            <img src="https://us.123rf.com/450wm/get4net/get4net2201/get4net220106205/179986887-qr-code-or-quick-response-code-a-type-of-matrix-barcodes.jpg?ver=6" id="imglink">
+        </div>
+        <div>
+            <button id="cancel" onclick="cancel_ac()">back</button><button id="okbutton" onclick="generate()">Generate</button>
+        </div>
+    </div>
+
+
+
+    <!-------------------------------script---------------------------------------------->
+    <script>
+        function generate(){
+            var input = document.getElementById('input').value;
+            if(input==null || input==""){
+                alert("Enter a valid input");
+            }
+            else{
+            var apiUrl = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=" + encodeURIComponent(input);
+            document.getElementById('imglink').src = apiUrl;
+            document.getElementById('imglink').style.margin="20px";
+            }
+        }
+        function cancel_ac(){
+            document.getElementById('imglink').src = "https://us.123rf.com/450wm/get4net/get4net2201/get4net220106205/179986887-qr-code-or-quick-response-code-a-type-of-matrix-barcodes.jpg?ver=6"; 
+            document.getElementById('input').value="";
+            document.getElementById('imglink').style.margin="0px";
+        }
+    </script>
+    
+</body>
+</html>
