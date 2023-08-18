@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=Lilita+One&family=Poppins:wght@200;300;400;500;800&display=swap');
+
+
 *{
     margin:0;
     padding:0;
@@ -5,24 +8,25 @@
 }
 body{
     background: rgb(63,94,251);
-    background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+    background-color:#9F7CF8;
     min-height:100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-family:poppins;
     font-size: 20px;
     font-weight: 600;
 }
 #container{
     background-color: #fff;
-    width:310px;
+    width: 305px;;
     padding:40px;
     border-radius: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    overflow: hidden;
 }
 input{
     width:100%;
@@ -38,10 +42,14 @@ input{
     background-color: #9F7CF8;
     width:55%;
     margin-left:5px;
+    transition: background-color 0.2s;
+    outline:none;
+    border:none;
 }
-#okbutton:hover{
+#okbutton:active{
     cursor: pointer;
     background-color: #494eea;
+    outline:none;
 }
 #cancel{
     font-size:15px;
@@ -50,11 +58,25 @@ input{
     background-color: orangered;
     width:37%;
     font-weight: 300;
+    transition: background-color 0.1s;
+    outline:none;
+    border:none;
 }
-#cancel:hover{
+#cancel:active{
     cursor: pointer;
     background-color: red; 
+    outline:none;
+    border:none;
 }
 img{
     height: 200px;
+}
+#buttons{
+    width:100%;
+}
+input{
+    padding: 10px;
+    font-size:18px;
+    font-family:poppins;
+    font-weight: 500;
 }
